@@ -1,0 +1,13 @@
+<h1>
+    <%= link "[+] Add New", to: user_path(@conn, :new), class: "btn btn-sm btn-primary pull-right" %>
+    List Users
+
+</h1>
+<table class="table table-border">
+<%= for user <- @users do %>
+    <tr>
+        <td><%= user.name %> (<%= user.id %>)</td>
+        <td><%= link "view", to: user_path(@conn, :show, user.id ) %></td>
+    </tr>
+<%= end %>
+</table>

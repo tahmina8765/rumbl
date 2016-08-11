@@ -1,0 +1,9 @@
+<h1>View User
+
+</h1>
+<div>
+    Name: <%= @user.name %>
+</div>
+<div>
+    ID: <%= @user.id %>
+</div>
