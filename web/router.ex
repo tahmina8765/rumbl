@@ -20,7 +20,7 @@ defmodule Rumbl.Router do
     # get "/users/:id", UserController, :show
     # get "/users/new", UserController, :new
 
-    resources "/users", UserController, only: [:index, :show, :new, :create] 
+    resources "/users", UserController
     get "/", PageController, :index
   end
 

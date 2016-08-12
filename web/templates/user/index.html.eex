@@ -7,7 +7,13 @@
 <%= for user <- @users do %>
     <tr>
         <td><%= user.name %> (<%= user.id %>)</td>
-        <td><%= link "view", to: user_path(@conn, :show, user.id ) %></td>
+        <td>
+            <div class="pull-right">
+                <%= link "view", to: user_path(@conn, :show, user.id ), class: "btn btn-xs btn-primary" %>
+                <%= link "Edit", to: user_path(@conn, :edit, user.id ), class: "btn btn-xs btn-success" %>
+                <%= link "Delete", to: user_path(@conn, :delete, user), class: "btn btn-xs btn-danger", method: :delete, data: [confirm: "Are you sure?"] %>
+            </div>
+        </td>
     </tr>
 <%= end %>
 </table>

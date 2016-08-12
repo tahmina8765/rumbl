@@ -26,8 +26,10 @@ defmodule Rumbl.User do
     end
 
     defp put_pass_hash(changeset) do
-        # case changeset do
-        #     %Ecto.Changeset{valid?: true, changes: %{password: pass}} -> put_change(changeset, :password_hash,  Comeonin.Bcrypt.hashpwsalt(pass)) -> changeset
-        # end
+        case changeset do
+            %Ecto.Changeset{valid?: true, changes: %{password: pass}}
+            -> put_change(changeset, :password_hash, Comeonin.Bcrypt.hashpwsalt(pass))
+            _ -> changeset
+        end
     end
 end
